@@ -13,11 +13,13 @@ class ConfigTestCase(unittest.TestCase):
 
     @classmethod
     def setUp(cls) -> None:
-        common.init()
-
-    def test_config_load(self):
         wd = os.getcwd()
         print('Working Directory = [' + wd + ']')
+        cf = wd + '/../resources/core.ini'
+        common.init(cf)
+
+    def test_config_load(self):
+
         config = Config.Config(self.CONST_CONFIG_FILE)
         section = config.get('wiki')
         self.assertIsNotNone(section)
