@@ -23,9 +23,14 @@ class Config:
     def get(self, section):
         if not self.parser:
             raise Exception('Parser not initialized')
-        return self.parser.items(section)
+        if self.parser.has_section(section):
+            return self.parser.items(section)
+        return None
 
-    def get_key(self, section, option):
+    def get_option(self, section, option):
         if not self.parser:
             raise Exception('Parser not initialized')
-        return self.parser.get(section, option)
+        if self.parser.has_section(section):
+            if self.parser.has_option(section, option):
+                return self.parser.get(section, option)
+        return None

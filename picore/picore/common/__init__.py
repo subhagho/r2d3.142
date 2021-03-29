@@ -63,7 +63,9 @@ def read_config(name, file):
 
 
 def get_config(name):
-    return __configs[name]
+    if name in __configs:
+        return __configs[name]
+    return None
 
 
 def get_logger():

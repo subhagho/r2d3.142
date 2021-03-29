@@ -19,15 +19,16 @@ class ConfigTestCase(unittest.TestCase):
         common.init(cf)
 
     def test_config_load(self):
-
         config = Config.Config(self.CONST_CONFIG_FILE)
         section = config.get('wiki')
         self.assertIsNotNone(section)
 
         self.__log.info('Section [' + str(section).strip('[]') + ']')
-        url = config.get_key('wiki', 'url')
+        url = config.get_option('wiki', 'url')
         self.assertIsNotNone(url)
         self.__log.info('URL = [' + url + ']')
+        vn = config.get_option('dummy', 'dummy')
+        self.assertIsNone(vn)
 
 
 if __name__ == '__main__':

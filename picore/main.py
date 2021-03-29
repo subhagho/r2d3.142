@@ -2,7 +2,7 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-import picore.common as common
+import picore
 import picore.common.Logger as logger
 import os
 
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     wd = os.getcwd()
     print('Working Directory = [' + wd + ']')
 
-    common.init()
+    picore.init()
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
