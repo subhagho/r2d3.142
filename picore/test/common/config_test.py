@@ -1,0 +1,32 @@
+import unittest
+
+import os
+
+import picore.common.Config as Config
+import picore.common as common
+import picore.common.Logger as logger
+
+
+class ConfigTestCase(unittest.TestCase):
+    CONST_CONFIG_FILE = '../resources/config_test.ini'
+    __log = logger.Logger()
+
+    @classmethod
+    def setUp(cls) -> None:
+        common.init()
+
+    def test_config_load(self):
+        wd = os.getcwd()
+        print('Working Directory = [' + wd + ']')
+        config = Config.Config(self.CONST_CONFIG_FILE)
+        section = config.get('wiki')
+        self.assertIsNotNone(section)
+
+        self.__log.info('Section [' + str(section).strip('[]') + ']')
+        url = config.get_key('wiki', 'url')
+        self.assertIsNotNone(url)
+        self.__log.info('URL = [' + url + ']')
+
+
+if __name__ == '__main__':
+    unittest.main()
