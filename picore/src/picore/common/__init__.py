@@ -2,8 +2,8 @@ import configparser
 import logging
 import logging.config
 import os.path as path
-import picore.common.CmdOptions as options
-import picore.common.Config as cfg
+from src import picore as options
+import src.picore.common.Config as cfg
 
 __CONFIG_SECTION_FILES__ = 'CONFIGS'
 __CONFIG_SECTION_DEFAULT__ = 'CORE'
