@@ -1,5 +1,5 @@
 import logging
-import picore.common as common
+from src import picore as common
 
 
 class Logger:

@@ -1,6 +1,5 @@
-import picore.common as common
-import picore.roaming as roaming
-import picore.common.Logger as logger
+from src import picore as common
+import src.picore.roaming as roaming
 import RPi.GPIO as gpio
 import math
 import time
@@ -33,7 +32,7 @@ class RPiMovement:
     CONST_GPIO_M2_1 = 24
     CONST_GPIO_EN_1 = 13
 
-    __log = logger.Logger()
+    __log = Logger.Logger()
 
     size_wheel_dia = 65.0
     size_wheel_dist = 170.0

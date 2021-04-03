@@ -2,14 +2,13 @@ import unittest
 
 import os
 
-import picore.common.Config as Config
-import picore.common as common
-import picore.common.Logger as logger
+import src.picore.common.Config as Config
+from src import picore as common
 
 
 class ConfigTestCase(unittest.TestCase):
     CONST_CONFIG_FILE = '../resources/config_test.ini'
-    __log = logger.Logger()
+    __log = Logger.Logger()
 
     @classmethod
     def setUp(cls) -> None:

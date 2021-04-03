@@ -1,5 +1,5 @@
 import unittest
-import picore.common.CmdOptions as options
+from src import picore as options
 
 
 class MyTestCase(unittest.TestCase):
