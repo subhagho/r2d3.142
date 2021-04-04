@@ -2,13 +2,13 @@ import configparser
 import logging
 import logging.config
 import os.path as path
-from src import picore as options
-import src.picore.common.Config as cfg
+import pir2.common.CmdOptions as options
+import pir2.common.Config as cfg
 
 __CONFIG_SECTION_FILES__ = 'CONFIGS'
 __CONFIG_SECTION_DEFAULT__ = 'CORE'
 __CONFIG_DEFAULT_KEY_LOG_CONFIG__ = 'logger.config'
-__DEFAULT_LOGGER_NAME__ = 'picore'
+__DEFAULT_LOGGER_NAME__ = 'pir2'
 
 sys_config_parser = configparser.ConfigParser()
 __configs = {}
