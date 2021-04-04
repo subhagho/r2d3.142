@@ -1,5 +1,5 @@
-from src import picore as common
-import src.picore.roaming as roaming
+import pir2.common as common
+import src.pir2.roaming as roaming
 import RPi.GPIO as gpio
 import math
 import time
@@ -19,7 +19,7 @@ class MovementState:
 
 
 class RPiMovement:
-    CONST_CONFIG_SECTION_NAME = 'picore.movement'
+    CONST_CONFIG_SECTION_NAME = 'pir2.movement'
     CONST_CONFIG_WHEEL_DIA = 'wheel.diameter'
     CONST_CONFIG_WHEEL_DIST = 'wheel.distance'
     CONST_CONFIG_MAX_RPM = 'rpm.max'

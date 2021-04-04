@@ -1,5 +1,5 @@
 import unittest
-from src import picore as options
+import pir2.common.CmdOptions as options
 
 
 class MyTestCase(unittest.TestCase):

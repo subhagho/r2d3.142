@@ -1,5 +1,6 @@
-import src.picore.roaming.stopper as stopper
-import src.picore.roaming.move as move
+import pir2.roaming.stopper as stopper
+import pir2.roaming.move as move
+import pir2.common.Logger as Logger
 import time
 import threading
 

@@ -1,11 +1,12 @@
-from src import picore as common
-import src.picore.roaming as roaming
+import pir2.common as common
+import pir2.roaming as roaming
+import pir2.common.Logger as Logger
 import RPi.GPIO as gpio
 import time
 
 
 class Stopper:
-    CONST_CONFIG_SECTION_NAME = 'picore.stopper'
+    CONST_CONFIG_SECTION_NAME = 'pir2.stopper'
     CONST_CONFIG_STOP_DIST = 'distance.stop'
     CONST_CONFIG_TRIG_PORT = 'port.trigger'
     CONST_CONFIG_ECHO_PORT = 'port.echo'

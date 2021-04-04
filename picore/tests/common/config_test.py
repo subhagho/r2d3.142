@@ -2,8 +2,9 @@ import unittest
 
 import os
 
-import src.picore.common.Config as Config
-from src import picore as common
+import pir2.common.Config as Config
+import pir2.common.Logger as Logger
+import pir2.common as common
 
 
 class ConfigTestCase(unittest.TestCase):
