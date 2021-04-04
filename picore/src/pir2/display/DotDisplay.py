@@ -1,6 +1,7 @@
 import pir2.common as common
 import pir2.roaming as roaming
 import pir2.common.Logger as Logger
+import pir2.display as display
 
 import smbus
 from time import sleep
@@ -92,11 +93,21 @@ En = 0b00000100  # Enable bit
 Rw = 0b00000010  # Read/Write bit
 Rs = 0b00000001  # Register select bit
 
+CONST_CONFIG_DISPLAY_DOT_ADDR = 'display.dot.address'
+CONST_CONFIG_DISPLAY_DOT_PORT = 'display.dot.port'
+
 
 class DisplayDotLcd:
     # initializes objects and lcd
     def __init__(self, addr=ADDRESS, port=I2CBUS):
         config = common.get_config(display.CONST_CONFIG_SECTION_NAME_DISPLAY)
+        if config:
+            c = config.get_option(display.CONST_CONFIG_SECTION_NAME_DISPLAY, CONST_CONFIG_DISPLAY_DOT_ADDR)
+            if c:
+                addr = int(c)
+            c = config.get_option(display.CONST_CONFIG_SECTION_NAME_DISPLAY, CONST_CONFIG_DISPLAY_DOT_PORT)
+            if c:
+                port = int(c)
 
         self.lcd_device = DisplayI2CDot(addr, port)
 
