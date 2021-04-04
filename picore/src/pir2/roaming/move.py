@@ -1,5 +1,7 @@
 import pir2.common as common
-import src.pir2.roaming as roaming
+import pir2.roaming as roaming
+import pir2.common.Logger as Logger
+import pir2.display as display
 import RPi.GPIO as gpio
 import math
 import time
