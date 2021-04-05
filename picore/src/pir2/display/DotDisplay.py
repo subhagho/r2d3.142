@@ -1,5 +1,4 @@
 import pir2.common as common
-import pir2.roaming as roaming
 import pir2.common.Logger as Logger
 import pir2.display as display
 
