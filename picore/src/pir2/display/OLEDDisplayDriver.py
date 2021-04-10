@@ -3,6 +3,14 @@ import pir2.common.IPCPipe as pipe
 import pir2.display as display
 import pir2.common.Logger as Logger
 import json
+from enum import Enum
+
+
+class TextSize(Enum):
+    SMALL = 1
+    MEDIUM = 2
+    LARGE = 3
+
 
 class DisplayMessage:
     X = 0
@@ -10,6 +18,7 @@ class DisplayMessage:
     XL = 124
     YL = 32
     message = ''
+    textSize = TextSize.MEDIUM
 
     def __init__(self, x=0, y=0, xl=124, yl=32):
         self.X = x
@@ -59,7 +68,7 @@ class OLEDDisplayDriver:
             raise Exception('OLED Display: Configuration section not found...')
 
     def write(self, message: str):
-        mesg = DisplayMessage(x=self.X, y = self.Y, xl = self.XL, yl = self.XL)
+        mesg = DisplayMessage(x=self.X, y=self.Y, xl=self.XL, yl=self.XL)
         mesg.message = message
 
         js = json.dumps(mesg)
